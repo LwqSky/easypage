@@ -1,0 +1,99 @@
+body {
+    position: relative;
+    background-image: url("../static/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 28px;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(241, 228, 192, 0.295);
+    /* 半透明背景 */
+    backdrop-filter: blur(10px);
+    /* 背景模糊 */
+    /* border: 1px solid #ff793f;*/
+    border-radius: 20px;
+    margin: 0px auto;
+    width: 600px;
+    height: 400px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+h1 {
+    margin-top: 25px;
+    font-size: 50px;
+}
+
+.login-form {
+    margin-top: 50px;
+}
+
+.login-input {
+    margin-top: 15px;
+}
+
+.login-input input {
+    width: 30%;
+    height: 25px;
+    border-radius: 5px;
+    margin-left: 10px;
+    background-color: #f7f1e388;
+}
+
+.login-input input:hover {
+    background-color: #f7f1e3ce;
+}
+
+.login-btn {
+
+    width: 15%;
+    background-color: rgba(139, 224, 157, 0.432);
+    font-size: 28px;
+    margin-top: 40px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.login-btn:hover {
+    background-color: rgba(139, 224, 157, 0.632);
+}
+
+.login-help {
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.login-help a {
+    color: #ff793fea;
+}
+
+.login-help a:hover {
+    color: #ff793f;
+}
+
+.login-error {
+    position: absolute;
+    /* 绝对定位 */
+    left: 50%;
+    transform: translateX(-50%);
+    /* 水平居中 */
+    margin-top: 13px;
+    /* 添加 px 单位 */
+    font-size: 15px;
+    color: rgba(5, 2, 2, 0.733);
+    /* 添加颜色样式 */
+    display: none;
+    /* 初始状态下隐藏 */
+    width: 100%;
+    /* 设置宽度以适应容器 */
+    text-align: center;
+    /* 文本居中 */
+}

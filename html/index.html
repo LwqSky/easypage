@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>首页</title>
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+  <!-- 导航栏 -->
+  <ul class="sidenav">
+    <li><a class="logo" href="#home"><img src="../static/head.png" alt="failed"></a></li>
+    <li><a href="#home">主页</a></li>
+    <li><a href="#studentInfo" id="nav1">学生信息</a></li>
+    <li><a href="#contact" id="nav2">添加学生</a></li>
+    <li><a href="#about" id="nav3">关于</a></li>
+    <li><a href="login.html" id="nav4">退出登录</a></li>
+  </ul>
+
+  <!-- 首页 -->
+  <div id="home" class="main">
+    <h1>劝学诗</h1>
+    <p>—— 赵恒</p>
+    <p>富家不用买良田，书中自有千钟粟。</p>
+    <p>安居不用架高堂，书中自有黄金屋。</p>
+    <p>出门莫恨无人随，书中车马多如簇。</p>
+    <p>娶妻莫恨无良媒，书中自有颜如玉。</p>
+    <p>男儿欲遂平生志，五经勤向窗前读。</p>
+    <p class="note">&nbsp;&nbsp;&nbsp;《劝学诗》是北宋赵恒创作的一首七言诗，也被称为《劝学文》《劝学歌》或《勉学歌》，元朝初期蒙学读本《古文真宝大全》将其置于开篇第一文。
+      此诗表示读书考取功名是当时人生的一条绝佳出路，考取功名后，才能得到财富和美人。它以其精简的语言和清晰的逻辑，向人们传达了一个深远而富有启示性的道理：读书是人类精神的食粮，也是通往成功和满足的桥梁。它鼓励人们珍视知识，追求智慧，用读书来丰富精神世界，实现人生价值。
+    </p>
+  </div>
+  <!-- 学生信息 -->
+  <div id="studentInfo" class="main">
+    <h1>学生信息</h1>
+    <div class="addAndSearch">
+      <button class="add"><a href="#contact">添加学生信息</a></button>
+      <span class="search"><input type="text" id="searchInput" placeholder="请输入姓名"><button id="searchButton">搜索</button></span>
+    </div>
+    
+
+
+    <table class="tableStyle">
+      <thead>
+        <tr>
+          <th>学号</th>
+          <th>姓名</th>
+          <th>班级</th>
+          <th>年龄</th>
+          <th>电话</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+
+
+      </tbody>
+    </table>
+
+
+  </div>
+  <!-- 添加学生 -->
+  <div id="contact" class="main">
+    <h1>添加学生</h1>
+    <div class="alert">
+      <form action="" method="">
+        <label for="name">姓&nbsp;&nbsp;&nbsp;名：</label>
+        <input type="text" class="name" id="name" name="name" required>
+        <br>
+        <label for="class">班&nbsp;&nbsp;&nbsp;级：</label>
+        <select id="class" class="select-class" name="alert-class" required>
+          <option value=""></option>
+          <option value="21计科一班">21计科一班</option>
+          <option value="21计科二班">21计科二班</option>
+          <option value="21计科三班">21计科三班</option>
+          <option value="21信安一班">21信安一班</option>
+          <option value="21信安二班">21信安二班</option>
+        </select>
+        <br>
+        <label for="age">年&nbsp;&nbsp;&nbsp;龄：</label>
+        <input type="number" class="age" id="age" name="age" required>
+        <br>
+        <label for="phone">电&nbsp;&nbsp;&nbsp;话：</label>
+        <input type="type" class="phone" id="phone" name="phone" required>
+        <br>
+        <button class="add-btn" type="submit">添&nbsp;&nbsp;&nbsp;加</button>
+
+      </form>
+    </div>
+
+  </div>
+  <!-- 关于 -->
+  <div id="about" class="main">
+    <h1>关于</h1>
+    <div class="about-content">
+      <p class="about-text note1">
+        又开始带清水大人节奏了，我真是服了😅 要知道，清水大人其实很怕抓取灌伤的，只是最近关中的清水大人靠操作赤史的视频火了，让一堆人觉得清水大人有操作。
+        但其实清水大人很怕和灌伤的，不要被有心人带了节奏。
+        清水大人是这个游戏唯一的完美忍者，已经和决斗场融为一体，成了决斗场的底层逻辑，成名绝技反手飞雷神，给决斗场带来了这个游戏最经典的博弈。 创造了决斗场的黄金时代，削弱清水大人，你想毁了这个游戏吗？😡
+      </p>
+      <p class="about-text note2">
+        对不起，你的评论中含有“们”→“门”，作为长门大人的信徒，我要开始了
+        青年长门还阴啊？
+        我个人认为青年长门做为火影忍者手游为数不多的佳作之一不应该被扣上阴的字眼，他的两个技能相互配合简直完美，别看你在决斗场中所遇到的土加雷追着你拿先手，其实这是要很大练习的，在训练营里要不断的拖轮盘，即使在训练营练好了，但在实战中很难拖出来，而且在实战中要根据对面的忍者强弱，秘卷，通灵个数等等一系列的实战中所遇到的情况来合理的来将双技能搭配，这些都是非常吃思路操作和意识的
+      </p>
+      <p class="about-text note3">
+        我认为你评价了黑土【四代目土影】，黑土【四代目土影】大人才是火影忍者手游的希望，黑土【四代目土影】，伤害低的、机动性差的、无敌帧少的、后摇大的、削弱过的、反手能力不强的、不好拿先手的、t2的。并且晚上黑土的本子能让我欲火焚身，而且我是每次看到我引以为傲的黑土大人因为T2而躲过策划追杀的时候我总是会沾沾自喜的心想，哈，这黑土啊，他暗部仔就是用不明白，就这遥杆换普攻没点操作根本玩不来，是的，黑土非常的有操作，毕竟滑两下摇杆这种进阶微操根本不是正常玩家可以做到的，再加上飞天普攻躲了大部分技能的时候，更加让我觉得黑土大人是象征着操作天花板的忍者
+      </p>
+      <p class="about-text note4">
+        你是一名优秀的死水新水老水门绝活哥，你相信，水门大人的神速在竞技场一定非常无敌😤😤😤，于是你苦练技巧🤓🤓🤓在竞技场闪来闪去，操作真的很秀，然而一天你碰见了双b加a的组合，于是你决定让对面一把，至死只用一个通灵，这是水门神对他人的恩赐与施舍🥰🥰，然而你被对方的纯度打法气运😡😡😡，眼看着自己的绝活，版本逆行者被b忍穿三😭😭😭，为了维护我们水门大人🤗你勇敢出击，为了保护环境，不随意放生，真是忠忠又诚诚啊😅
+      </p>
+    </div>
+
+  </div>
+
+
+
+
+
+  <script src="../js/index.js"></script>
+</body>
+
+</html>
