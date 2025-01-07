@@ -6,7 +6,6 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-
 }
 
 ul.sidenav {
@@ -45,7 +44,6 @@ ul.sidenav li a:hover:not(.active) {
 
 ul.sidenav li .logo:hover:not(.active) {
   background-color: #9b9b9b10;
-
 }
 
 ul.sidenav li .logo.active {
@@ -69,7 +67,6 @@ ul.sidenav li .logo {
   border-radius: 10px;
   background-color: #f1f1f185;
   order: 1;
-
 }
 
 .main:target {
@@ -79,7 +76,6 @@ ul.sidenav li .logo {
 h1 {
   text-align: center;
   font-size: 250%;
-
 }
 
 .addAndSearch {
@@ -91,7 +87,6 @@ h1 {
 .add {
   margin-left: 10%;
   background-color: #f1f1f117;
-
 }
 
 .add a {
@@ -100,7 +95,6 @@ h1 {
   font-size: 100%;
   text-decoration: none;
   text-align: center;
-
 }
 
 .search {
@@ -127,15 +121,12 @@ h1 {
   background-color: #f1f1f169;
 }
 
-
 .main p {
   text-align: center;
   font-size: 24px;
   margin-top: 40px;
   letter-spacing: 2px;
-
   font-family: "黑体", SimHei;
-
 }
 
 .main .note {
@@ -170,7 +161,6 @@ table {
   margin: auto;
   text-align: center;
   border-collapse: collapse;
-
 }
 
 table th {
@@ -213,7 +203,6 @@ table td:hover {
 .age,
 .phone {
   margin-top: 5%;
-
 }
 
 .name,
@@ -222,7 +211,6 @@ input {
   border: none;
   outline: none;
   padding: 5px;
-
   background-color: #f1f1f100;
   width: 50%;
   height: 30px;
@@ -232,8 +220,6 @@ input {
   text-align: center;
   font-family: "方正舒体", FZShuTi;
 }
-
-
 
 .select-class {
   border: none;
@@ -246,9 +232,7 @@ input {
   text-align: center;
   border-bottom: #000 solid 2px;
   transition: border-color 0.3s;
-
 }
-
 
 select:focus {
   border-bottom: 2px solid #00000094;
@@ -260,7 +244,6 @@ select {
   -moz-appearance: none;
   appearance: none;
 }
-
 
 select option {
   color: #000;
@@ -287,13 +270,9 @@ select:focus {
   background-color: #4caf4fb6;
 }
 
-
-
-
-
 .about-content {
   position: relative;
-  height: 300px; /* 根据实际内容高度调整 */
+  height: 300px;
   overflow: hidden;
 }
 
@@ -303,10 +282,10 @@ select:focus {
   left: 5%;
   width: 90%;
   opacity: 0;
-  animation: textRotate 20s infinite; /* 总时间为20秒（4段文字，每段5秒） */
-  font-size: 30px; /* 加大字号 */
-  text-indent: 2em; /* 首行缩进 */
-  line-height: 1.6; /* 增加行高，提升可读性 */
+  animation: textRotate 20s infinite;
+  font-size: 30px;
+  text-indent: 2em;
+  line-height: 1.6;
 }
 
 .about-text.note1 {
