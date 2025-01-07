@@ -1,55 +1,115 @@
-// 准备好的数据
-let user = [
-    {
-        username: "admin",
-        password: "123456"
-    },
-    {
-        username: "root",
-        password: "123456"
-    }
+// 用户数据
+const users = [
+    { username: "admin", password: "123456" },
+    { username: "root", password: "123456" }
 ];
 
-// 获取表单元素
-let information = document.querySelector('form');
+// DOM元素
+const form = document.querySelector('form');
+const errorElement = document.querySelector('.login-error');
+const errorContainer = document.querySelector('.error-container');
+const usernameInput = document.getElementById('username');
+const passwordInput = document.getElementById('password');
+const captchaInput = document.getElementById('captcha');
+const captchaBox = document.getElementById('captcha-box');
+const rememberCheckbox = document.getElementById('remember');
 
-// 获取错误信息显示元素
-let error = document.querySelector('.login-error');
-// 添加表单提交事件监听器
-information.addEventListener('submit', function (event) {
-    event.preventDefault(); // 阻止默认的表单提交行为
+let currentCaptcha = '';
 
-
-    // 获取用户名和密码输入框的值
-    let username = document.getElementById('username').value;
-    let password = document.getElementById('password').value;
-    //检测用户名或密码是否为空    
-    if (username === "" || password === "") {
-        error.innerHTML = "用户名或密码不能为空";
-        error.style.display = "block"; // 显示错误信息
-
-        return;
+// 生成随机验证码
+function generateCaptcha() {
+    const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let captcha = '';
+    for (let i = 0; i < 4; i++) {
+        captcha += chars[Math.floor(Math.random() * chars.length)];
     }
-    // 调用登录函数
-    login(username, password);
+    return captcha;
+}
 
+// 显示验证码
+function displayCaptcha() {
+    currentCaptcha = generateCaptcha();
+    captchaBox.textContent = currentCaptcha;
+}
+
+// 点击验证码刷新
+captchaBox.addEventListener('click', displayCaptcha);
+
+// 页面加载时生成验证码
+document.addEventListener('DOMContentLoaded', () => {
+    displayCaptcha();
+    
+    // 检查是否有保存的登录信息
+    const savedUsername = localStorage.getItem('username');
+    const savedPassword = localStorage.getItem('password');
+    
+    if (savedUsername && savedPassword) {
+        usernameInput.value = savedUsername;
+        passwordInput.value = savedPassword;
+        rememberCheckbox.checked = true;
+    }
 });
 
-// 登录函数
-function login(username, password) {
-    for (let i = 0; i < user.length; i++) {
-        if (user[i].username === username && user[i].password === password) {
-            error.innerHTML = "登录成功，三秒内跳转到主页";
-            error.style.display = "block"; // 显示错误信息
-            // 延迟3秒跳转到主页
-            setTimeout(function () {
-                window.location.href = "index.html";
-            }, 3000);
-            return;
-        }
+// 显示错误信息
+const showError = (message) => {
+    errorElement.innerHTML = message;
+    errorElement.style.display = "block";
+    errorContainer.style.visibility = "visible";
+};
+
+// 保存登录信息
+const saveLoginInfo = (username, password) => {
+    if (rememberCheckbox.checked) {
+        localStorage.setItem('username', username);
+        localStorage.setItem('password', password);
+    } else {
+        localStorage.removeItem('username');
+        localStorage.removeItem('password');
     }
-    // 如果没有找到匹配的用户名和密码，则显示错误信息
-    error.innerHTML = "用户名或密码错误";
-    error.style.display = "block"; // 显示错误信息
-}
+};
+
+// 登录验证
+const validateLogin = (username, password) => {
+    return users.some(user => user.username === username && user.password === password);
+};
+
+// 表单提交处理
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value.trim();
+    const captcha = captchaInput.value.trim();
+
+    if (!username || !password) {
+        showError("用户名或密码不能为空");
+        return;
+    }
+
+    if (!captcha) {
+        showError("请输入验证码");
+        return;
+    }
+
+    if (captcha.toLowerCase() !== currentCaptcha.toLowerCase()) {
+        showError("验证码错误");
+        displayCaptcha();
+        captchaInput.value = '';
+        return;
+    }
+
+    if (validateLogin(username, password)) {
+        // 保存登录信息
+        saveLoginInfo(username, password);
+        
+        showError("登录成功，三秒内跳转到主页");
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 3000);
+    } else {
+        showError("用户名或密码错误");
+        displayCaptcha();
+        captchaInput.value = '';
+    }
+});
 
